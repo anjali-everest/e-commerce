@@ -14,3 +14,8 @@ def get_items():
 @item_router.post("/add_to_cart")
 def add_item_to_cart(item_id: int):
     return item_service.add_item_to_cart(item_id)
+
+
+@item_router.post("/remove_from_cart")
+def remove_from_cart(item_id: int):
+    return item_service.remove_from_cart(item_id)
