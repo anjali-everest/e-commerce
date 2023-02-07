@@ -1,16 +1,11 @@
-import json
-
 from fastapi import FastAPI
-from models.item import Item
+from routes.item_router import item_router
 
 app = FastAPI()
 
-@app.get("/")
+app.include_router(item_router)
+
+
+@app.get("/hello")
 async def root():
     return {"message": "Hello World"}
-
-@app.get("/items/")
-async def get_items():
-    f = open('data.json')
-    data = json.load(f)
-    return data
