@@ -10,7 +10,7 @@ class Item(BaseModel):
     price: float
     discountPercentage: float
     rating: float
-    stock: float
+    stock: bool
     brand: str
     category: str
     thumbnail: str
